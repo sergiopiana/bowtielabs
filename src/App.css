@@ -1,0 +1,133 @@
+/* --- Layout & Components --- */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: var(--nav-height);
+  overflow: hidden;
+}
+
+.heading-xl {
+  margin-bottom: var(--space-4);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-10);
+}
+
+/* --- Bento Cards --- */
+.bento-card {
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-10);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid transparent;
+}
+
+.bento-card:hover {
+  transform: scale(1.02);
+  background-color: var(--bg-tertiary);
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-md);
+}
+
+/* --- Stats System --- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-10);
+  text-align: center;
+}
+
+.stat-number {
+  font-size: var(--text-5xl);
+  font-weight: 700;
+  color: var(--fg-primary);
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.04em;
+}
+
+.stat-label {
+  font-size: var(--text-base);
+  color: var(--fg-secondary);
+}
+
+/* --- Logic Showcase (Logos) --- */
+.logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-12);
+  opacity: 0.5;
+  filter: grayscale(1);
+  transition: var(--transition);
+}
+
+.logo-grid:hover {
+  opacity: 0.8;
+}
+
+/* --- Footer Architecture --- */
+.footer {
+  padding: var(--space-16) 0 var(--space-10);
+  border-top: 1px solid var(--border-light);
+  background-color: var(--bg-tertiary);
+}
+
+.footer-column h4 {
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-4);
+  color: var(--fg-primary);
+}
+
+.footer-list {
+  list-style: none;
+  font-size: var(--text-sm);
+  color: var(--fg-tertiary);
+}
+
+.footer-list li {
+  margin-bottom: var(--space-2);
+  transition: var(--transition);
+}
+
+.footer-list li:hover {
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.footer-legal {
+  margin-top: var(--space-12);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border-light);
+  font-size: var(--text-xs);
+  color: var(--fg-tertiary);
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
