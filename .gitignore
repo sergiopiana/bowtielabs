@@ -10,8 +10,15 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+build
 *.local
-
+.git
+.next
+coverage
+*.png
+*.jpg
+*.jpeg
+*.webp
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

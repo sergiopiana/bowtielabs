@@ -5,8 +5,6 @@ import {
     Smartphone,
     Globe,
     Users,
-    Moon,
-    Sun
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
