@@ -15,10 +15,11 @@ build
 .git
 .next
 coverage
-*.png
-*.jpg
-*.jpeg
-*.webp
+# Images are allowed in src/assets
+# *.png
+# *.jpg
+# *.jpeg
+# *.webp
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

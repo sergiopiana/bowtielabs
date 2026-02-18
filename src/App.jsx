@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 import './App.css';
 import logoHorizontal from './assets/logo-horizontal.png';
-import heroImage from './assets/hero-keyboard.jpg';
+import heroImage from './assets/hero-keyboard.webp';
 import CountUp from 'react-countup';
 
 
