@@ -11,6 +11,8 @@ import {
   Facebook,
   Twitter,
   Linkedin,
+  Menu,
+  X
 } from 'lucide-react';
 import './App.css';
 import logoHorizontal from './assets/logo-horizontal.webp';
@@ -18,21 +20,54 @@ import heroImage from './assets/hero-keyboard.webp';
 import CountUp from 'react-countup';
 
 
-const Navbar = () => (
-  <nav className="navbar glass">
-    <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-      <img src={logoHorizontal} alt="BowTieLabs Logo" style={{ height: '24px', filter: 'invert(var(--logo-invert))' }} />
-      <div style={{ display: 'flex', gap: 'var(--space-6)', fontSize: 'var(--text-xs)', fontWeight: 400 }}>
-        <a href="#home" style={{ textDecoration: 'none' }}>Home</a>
-        <a href="#wedo" style={{ textDecoration: 'none' }}>What we do</a>
-        <a href="#services" style={{ textDecoration: 'none' }}>Services</a>
-        <a href="#facts" style={{ textDecoration: 'none' }}>Facts</a>
-        <a href="#clients" style={{ textDecoration: 'none' }}>Clients</a>
-        <a href="#contact" style={{ textDecoration: 'none' }}>Contact</a>
+const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+
+  return (
+    <nav className="navbar glass">
+      <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '100%' }}>
+        <img src={logoHorizontal} alt="BowTieLabs Logo" style={{ height: '24px', filter: 'invert(var(--logo-invert))' }} />
+
+        {/* Desktop Menu */}
+        <div className="nav-links-desktop">
+          <a href="#home">Home</a>
+          <a href="#wedo">What we do</a>
+          <a href="#services">Services</a>
+          <a href="#facts">Facts</a>
+          <a href="#clients">Clients</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        {/* Mobile menu button */}
+        <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Toggle menu">
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+
+        {/* Mobile Menu Overlay */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              className="nav-links-mobile"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.2 }}
+            >
+              <a href="#home" onClick={toggleMenu}>Home</a>
+              <a href="#wedo" onClick={toggleMenu}>What we do</a>
+              <a href="#services" onClick={toggleMenu}>Services</a>
+              <a href="#facts" onClick={toggleMenu}>Facts</a>
+              <a href="#clients" onClick={toggleMenu}>Clients</a>
+              <a href="#contact" onClick={toggleMenu}>Contact</a>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </div>
-  </nav>
-);
+    </nav>
+  );
+};
 
 const Hero = () => {
   const slides = [
