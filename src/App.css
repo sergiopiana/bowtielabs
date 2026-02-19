@@ -222,11 +222,21 @@
   }
 
   .section {
-    padding: var(--space-10) var(--space-5);
+    padding: var(--space-10) 0;
+    /* Remove horizontal padding here, container handles it */
+    text-align: center;
+  }
+
+  .section h2 {
+    text-align: center;
+    margin-bottom: var(--space-8);
   }
 
   .bento-card {
-    padding: var(--space-6);
+    padding: var(--space-8) var(--space-6);
+    align-items: center;
+    /* Center content horizontally */
+    text-align: center;
   }
 
   .heading-xl {
