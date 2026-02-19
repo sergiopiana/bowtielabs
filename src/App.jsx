@@ -13,7 +13,7 @@ import {
   Linkedin,
 } from 'lucide-react';
 import './App.css';
-import logoHorizontal from './assets/logo-horizontal.png';
+import logoHorizontal from './assets/logo-horizontal.webp';
 import heroImage from './assets/hero-keyboard.webp';
 import CountUp from 'react-countup';
 
