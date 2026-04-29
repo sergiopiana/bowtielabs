@@ -69,6 +69,16 @@
   overflow: hidden;
 }
 
+/* El hero siempre tiene overlay blanco → texto siempre oscuro */
+.hero h1,
+.hero p {
+  color: #1d1d1f;
+}
+
+.hero .btn-link {
+  color: #0066cc;
+}
+
 .heading-xl {
   margin-bottom: var(--space-4);
   line-height: 1.1;
